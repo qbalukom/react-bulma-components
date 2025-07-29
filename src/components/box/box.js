@@ -10,8 +10,4 @@ const Box = ({ children, className, ...props }) => {
   );
 };
 
-Box.propTypes = {};
-
-Box.defaultProps = {};
-
 export default Box;

@@ -9,6 +9,4 @@ const PanelHeader = ({ className, ...props }) => {
   );
 };
 
-PanelHeader.propTypes = {};
-
 export default PanelHeader;

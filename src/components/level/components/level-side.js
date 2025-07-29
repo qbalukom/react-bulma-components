@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const LevelSide = ({ className, align, ...props }) => {
+const LevelSide = ({ className, align = 'left', ...props }) => {
   return (
     <Element
       {...props}
@@ -13,14 +13,6 @@ const LevelSide = ({ className, align, ...props }) => {
       })}
     />
   );
-};
-
-LevelSide.propTypes = {
-  align: PropTypes.oneOf(['left', 'right']),
-};
-
-LevelSide.defaultProps = {
-  align: 'left',
 };
 
 export default LevelSide;

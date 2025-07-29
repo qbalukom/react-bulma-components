@@ -6,10 +6,11 @@ import LevelItem from './components/level-item';
 
 import Element from '../element';
 
-const Level = ({ children, className, breakpoint, ...props }) => {
+const Level = ({ children, className, breakpoint, renderAs = 'nav', ...props }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames('level', className, {
         [`is-${breakpoint}`]: breakpoint,
       })}
@@ -20,20 +21,6 @@ const Level = ({ children, className, breakpoint, ...props }) => {
 };
 
 Level.Side = LevelSide;
-
 Level.Item = LevelItem;
-
-Level.propTypes = {
-  breakpoint: PropTypes.oneOf(['mobile']),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Level.defaultProps = {
-  renderAs: 'nav',
-};
 
 export default Level;

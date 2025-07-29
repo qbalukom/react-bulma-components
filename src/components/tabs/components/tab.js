@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const Tab = ({ children, className, style, active, domRef, ...props }) => {
+const Tab = ({ children, className, style, active, domRef, renderAs = 'a', ...props }) => {
   return (
     <li
       ref={domRef}
@@ -13,22 +13,9 @@ const Tab = ({ children, className, style, active, domRef, ...props }) => {
         'is-active': active,
       })}
     >
-      <Element {...props}>{children}</Element>
+      <Element {...props} renderAs={renderAs}>{children}</Element>
     </li>
   );
-};
-
-Tab.propTypes = {
-  active: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Tab.defaultProps = {
-  renderAs: 'a',
 };
 
 export default Tab;

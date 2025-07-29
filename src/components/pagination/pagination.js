@@ -27,20 +27,21 @@ const getLastPage = (current, total, delta) => {
 };
 
 const Pagination = ({
-  current,
+  current = 1,
   disabled,
-  total,
-  next,
-  previous,
-  showPrevNext,
+  total = 1,
+  next = 'Next',
+  previous = 'Previous',
+  showPrevNext = true,
   showFirstLast,
-  delta,
-  autoHide,
+  delta = 1,
+  autoHide = true,
   className,
   size,
   align,
   rounded,
   onChange,
+  renderAs = 'nav',
   ...props
 }) => {
   if ((total <= 1 && autoHide) || current > total) {
@@ -55,6 +56,7 @@ const Pagination = ({
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames('pagination', className, {
         [`is-${size}`]: size,
         [`is-${normalizeAlign(align)}`]: align,
@@ -176,54 +178,6 @@ const Pagination = ({
       )}
     </Element>
   );
-};
-
-Pagination.propTypes = {
-  /**
-   * This function its called when the user click on ano button that trigger a page change
-   * the parameter of the function is the new page number
-   */
-  onChange: PropTypes.func.isRequired,
-  /** Current page */
-  current: PropTypes.number,
-  /** whether to disable the buttons */
-  disabled: PropTypes.bool,
-  /** Total pages in total */
-  total: PropTypes.number,
-  /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
-  delta: PropTypes.number,
-  /** Text of the Next button */
-  next: PropTypes.node,
-  /** Text of the Previous button */
-  previous: PropTypes.node,
-  showPrevNext: PropTypes.bool,
-  showFirstLast: PropTypes.bool,
-  /**
-   * If true will hide the pagination if `total == 1`
-   */
-  autoHide: PropTypes.bool,
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  align: PropTypes.oneOf(['center', 'right']),
-  rounded: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Pagination.defaultProps = {
-  total: 1,
-  current: 1,
-  delta: 1,
-  next: 'Next',
-  previous: 'Previous',
-  renderAs: 'nav',
-  showPrevNext: true,
-  autoHide: true,
 };
 
 export default Pagination;

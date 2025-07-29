@@ -12,8 +12,4 @@ const CardFooter = ({ className, ...props }) => {
 
 CardFooter.Item = CardFooterItem;
 
-CardFooter.propTypes = {};
-
-CardFooter.defaultProps = {};
-
 export default CardFooter;

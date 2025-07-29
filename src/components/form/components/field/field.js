@@ -46,33 +46,4 @@ Field.Label = FieldLabel;
 
 Field.Body = FieldBody;
 
-Field.propTypes = {
-  /**
-   * When this prop is set this value will be used as size for `Form.Label` `Form.Input`, `Form.Textarea`, `Form.Select`, `Button` and `Icon` inside the field
-   */
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  /**
-   * `addon`: Will group together the controls without gap between
-   * `group`: Will group together the controls with evenly seperation between
-   */
-  kind: PropTypes.oneOf(['addons', 'group']),
-  /**
-   * Working together with `kind="group"` to align all controls
-   */
-  align: PropTypes.oneOf(['center', 'right']),
-  /**
-   * When `kind="group"` will wrap to next line if the control do not fit on the current line
-   */
-  multiline: PropTypes.bool,
-  /**
-   * To create a 2 columns form, See `Form.Field.Label` and `Form.Field.Body` for more details
-   */
-  horizontal: PropTypes.bool,
-};
-
-Field.defaultProps = {};
-
 export default Field;

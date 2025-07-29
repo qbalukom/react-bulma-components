@@ -9,8 +9,4 @@ const CardContent = ({ className, ...props }) => {
   );
 };
 
-CardContent.propTypes = {};
-
-CardContent.defaultProps = {};
-
 export default CardContent;

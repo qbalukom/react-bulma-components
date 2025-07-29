@@ -10,7 +10,7 @@ const NavbarItem = ({
   active,
   children,
   hoverable,
-  renderAs,
+  renderAs = 'a',
   arrowless,
   ...props
 }) => {
@@ -38,28 +38,6 @@ const NavbarItem = ({
       {children}
     </Element>
   );
-};
-
-NavbarItem.propTypes = {
-  /**
-   * If the item has a dropdown, control if the dropdown is displayed
-   */
-  active: PropTypes.bool,
-  /**
-   * Control if the dropdown should be displayed on mouse over
-   * This prop will be ignored if `active=true`
-   */
-  hoverable: PropTypes.bool,
-  arrowless: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-NavbarItem.defaultProps = {
-  renderAs: 'a',
 };
 
 export default NavbarItem;

@@ -9,8 +9,4 @@ const CardHeaderIcon = ({ className, ...props }) => {
   );
 };
 
-CardHeaderIcon.propTypes = {};
-
-CardHeaderIcon.defaultProps = {};
-
 export default CardHeaderIcon;

@@ -24,8 +24,4 @@ const NavbarMenu = ({ className, children, ...props }) => {
   );
 };
 
-NavbarMenu.propTypes = {};
-
-NavbarMenu.defaultProps = {};
-
 export default NavbarMenu;

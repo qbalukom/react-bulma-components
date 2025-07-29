@@ -11,6 +11,4 @@ const ModalContent = ({ children, className, ...props }) => {
   );
 };
 
-ModalContent.propTypes = {};
-
 export default ModalContent;

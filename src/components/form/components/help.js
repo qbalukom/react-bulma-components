@@ -4,10 +4,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const Help = ({ className, children, color, ...props }) => {
+const Help = ({ className, children, color, renderAs = 'p', ...props }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames('help', className, {
         [`is-${color}`]: color,
       })}
@@ -15,31 +16,6 @@ const Help = ({ className, children, color, ...props }) => {
       {children}
     </Element>
   );
-};
-
-Help.propTypes = {
-  color: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Help.defaultProps = {
-  renderAs: 'p',
 };
 
 export default Help;

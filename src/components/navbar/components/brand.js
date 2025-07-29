@@ -11,8 +11,4 @@ const NavbarBrand = ({ className, children, ...props }) => {
   );
 };
 
-NavbarBrand.propTypes = {};
-
-NavbarBrand.defaultProps = {};
-
 export default NavbarBrand;

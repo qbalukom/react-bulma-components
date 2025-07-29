@@ -4,24 +4,12 @@ import classnames from 'classnames';
 
 import Element from '../../../element';
 
-const ModalCardFoot = ({ children, className, ...props }) => {
+const ModalCardFoot = ({ children, className, renderAs = 'footer', ...props }) => {
   return (
-    <Element {...props} className={classnames('modal-card-foot', className)}>
+    <Element {...props} renderAs={renderAs} className={classnames('modal-card-foot', className)}>
       {children}
     </Element>
   );
-};
-
-ModalCardFoot.propTypes = {
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-ModalCardFoot.defaultProps = {
-  renderAs: 'footer',
 };
 
 export default ModalCardFoot;

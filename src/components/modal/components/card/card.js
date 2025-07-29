@@ -24,8 +24,4 @@ ModalCard.Footer = ModalCardFooter;
 
 ModalCard.Title = ModalCardTitle;
 
-ModalCard.propTypes = {};
-
-ModalCard.defaultProps = {};
-
 export default ModalCard;

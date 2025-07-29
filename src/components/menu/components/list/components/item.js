@@ -11,6 +11,7 @@ const MenuListItem = ({
   active,
   className,
   domRef: ref,
+  renderAs = 'a',
   ...props
 }) => {
   if (
@@ -22,8 +23,9 @@ const MenuListItem = ({
     return (
       <li ref={ref}>
         <Element
-          className={classnames(className, { 'is-active': active })}
           {...props}
+          renderAs={renderAs}
+          className={classnames(className, { 'is-active': active })}
         >
           {child.props.title}
         </Element>
@@ -35,26 +37,14 @@ const MenuListItem = ({
   return (
     <li ref={ref}>
       <Element
-        className={classnames(className, { 'is-active': active })}
         {...props}
+        renderAs={renderAs}
+        className={classnames(className, { 'is-active': active })}
       >
         {children}
       </Element>
     </li>
   );
-};
-
-MenuListItem.propTypes = {
-  active: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-MenuListItem.defaultProps = {
-  renderAs: 'a',
 };
 
 export default MenuListItem;

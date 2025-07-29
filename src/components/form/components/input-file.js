@@ -16,9 +16,9 @@ const InputFile = ({
   align,
   boxed,
   name,
-  label,
+  label = 'Choose a file...',
   icon,
-  inputProps,
+  inputProps = {},
   filename,
   value,
   ...props
@@ -68,75 +68,6 @@ const InputFile = ({
       </label>
     </Element>
   );
-};
-
-InputFile.propTypes = {
-  /**
-   * The color of `InputFile`
-   */
-  color: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  /**
-   * The size of `InputFile`
-   */
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  /**
-   * The name of the selected file. It will be shown as the file label
-   * of this component, next/under the upload button.
-   */
-  filename: PropTypes.string,
-  /**
-   * The selected file(s) object.
-   */
-  value: PropTypes.any,
-  /**
-   * Whether `InputFile` should take up all available width.
-   */
-  fullwidth: PropTypes.bool,
-  align: PropTypes.oneOf(['center', 'right']),
-  /**
-   * Whether `InputFile` should be rendered in a box shape.
-   */
-  boxed: PropTypes.bool,
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
-  name: PropTypes.string,
-  /**
-   * Label for the upload button.
-   */
-  label: PropTypes.string,
-  /**
-   * An optional icon to be drawn in the button next to/on top of the button label.
-   *
-   * `icon={<i className="fas ..." />}`
-   */
-  icon: PropTypes.element,
-  /**
-   * Additional props to be passed to the underlying `<input>` element.
-   * Other props passed to `InputFile` itself will be passed to the element
-   * that wraps around the `<input>` element.
-   */
-  inputProps: PropTypes.shape({}),
-};
-
-InputFile.defaultProps = {
-  label: 'Choose a file...',
-  inputProps: {},
 };
 
 export default InputFile;

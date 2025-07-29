@@ -4,10 +4,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const NavbarLink = ({ className, children, arrowless, ...props }) => {
+const NavbarLink = ({ className, children, arrowless, renderAs = 'span', ...props }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames('navbar-link', className, {
         'is-arrowless': arrowless,
       })}
@@ -15,19 +16,6 @@ const NavbarLink = ({ className, children, arrowless, ...props }) => {
       {children}
     </Element>
   );
-};
-
-NavbarLink.propTypes = {
-  arrowless: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-NavbarLink.defaultProps = {
-  renderAs: 'span',
 };
 
 export default NavbarLink;

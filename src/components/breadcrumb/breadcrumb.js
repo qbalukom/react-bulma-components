@@ -10,11 +10,13 @@ const Breadcrumb = ({
   size,
   align,
   children,
+  renderAs = 'nav',
   ...props
 }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames('breadcrumb', className, {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
@@ -27,26 +29,5 @@ const Breadcrumb = ({
 };
 
 Breadcrumb.Item = BreadcrumbItem;
-
-Breadcrumb.propTypes = {
-  separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  align: PropTypes.oneOf(['right', 'center']),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Breadcrumb.defaultProps = {
-  separator: undefined,
-  renderAs: 'nav',
-  size: undefined,
-  align: undefined,
-};
 
 export default Breadcrumb;

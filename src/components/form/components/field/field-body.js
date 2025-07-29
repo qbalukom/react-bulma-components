@@ -11,8 +11,4 @@ const FieldBody = ({ children, className, ...props }) => {
   );
 };
 
-FieldBody.propTypes = {};
-
-FieldBody.defaultProps = {};
-
 export default FieldBody;

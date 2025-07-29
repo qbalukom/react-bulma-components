@@ -17,10 +17,4 @@ const FieldLabel = ({ className, size, ...props }) => {
   );
 };
 
-FieldLabel.propTypes = {
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
-};
-
-FieldLabel.defaultProps = {};
-
 export default FieldLabel;

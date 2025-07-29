@@ -3,20 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Element from '../../../element';
 
-const Text = ({ className, ...props }) => {
-  return <Element className={classNames('icon-text', className)} {...props} />;
-};
-
-Text.propTypes = {
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Text.defaultProps = {
-  renderAs: 'span',
+const Text = ({ className, renderAs = 'span', ...props }) => {
+  return <Element {...props} renderAs={renderAs} className={classNames('icon-text', className)} />;
 };
 
 export default Text;

@@ -10,32 +10,21 @@ const Checkbox = ({
   disabled,
   children,
   domRef,
+  renderAs = 'input',
+  renderLabelAs = 'label',
   ...props
 }) => {
   return (
     <Element
-      renderAs="label"
+      renderAs={renderLabelAs}
       domRef={domRef}
       disabled={disabled}
       className={classnames('checkbox', className)}
       style={style}
     >
-      <Element type="checkbox" disabled={disabled} {...props} /> {children}
+      <Element type="checkbox" disabled={disabled} {...props} renderAs={renderAs} /> {children}
     </Element>
   );
-};
-
-Checkbox.propTypes = {
-  disabled: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Checkbox.defaultProps = {
-  renderAs: 'input',
 };
 
 export default Checkbox;

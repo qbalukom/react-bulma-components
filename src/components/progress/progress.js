@@ -4,10 +4,11 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
-const Progress = ({ className, value, max, color, size, ...props }) => {
+const Progress = ({ className, value, max, color, size, renderAs = 'progress', ...props }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       value={value}
       max={max}
       className={classnames('progress', className, {
@@ -16,37 +17,6 @@ const Progress = ({ className, value, max, color, size, ...props }) => {
       })}
     />
   );
-};
-
-Progress.propTypes = {
-  color: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  value: PropTypes.number,
-  max: PropTypes.number,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Progress.defaultProps = {
-  renderAs: 'progress',
 };
 
 export default Progress;

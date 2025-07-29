@@ -3,16 +3,10 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const DropdownDivider = ({ className, ...props }) => {
+const DropdownDivider = ({ className, renderAs = 'hr', ...props }) => {
   return (
-    <Element {...props} className={classnames('dropdown-divider', className)} />
+    <Element renderAs={renderAs} {...props} className={classnames('dropdown-divider', className)} />
   );
-};
-
-DropdownDivider.propTypes = {};
-
-DropdownDivider.defaultProps = {
-  renderAs: 'hr',
 };
 
 export default DropdownDivider;

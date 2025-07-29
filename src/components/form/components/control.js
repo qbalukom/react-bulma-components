@@ -59,20 +59,4 @@ const Control = ({
   );
 };
 
-Control.propTypes = {
-  loading: PropTypes.bool,
-  iconType: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-  /**
-   * When true and the `Field` container has the `kind` props set the Control
-   * will use all available space instead of adjusting to the element inside
-   */
-  fullwidth: PropTypes.bool,
-};
-
-Control.defaultProps = {};
-
 export default Control;

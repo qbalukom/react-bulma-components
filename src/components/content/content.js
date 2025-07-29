@@ -17,13 +17,4 @@ const Content = ({ children, className, size, ...props }) => {
   );
 };
 
-Content.propTypes = {
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-};
-
-Content.defaultProps = {};
-
 export default Content;

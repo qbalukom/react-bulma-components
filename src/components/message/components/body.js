@@ -11,6 +11,4 @@ const MessageBody = ({ children, className, ...props }) => {
   );
 };
 
-MessageBody.propTypes = {};
-
 export default MessageBody;

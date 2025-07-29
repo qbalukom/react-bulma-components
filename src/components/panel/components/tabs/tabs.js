@@ -10,6 +10,4 @@ const PanelTabs = ({ className, ...props }) => {
 
 PanelTabs.Tab = Tab;
 
-PanelTabs.propTypes = {};
-
 export default PanelTabs;

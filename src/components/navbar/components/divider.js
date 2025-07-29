@@ -4,22 +4,10 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const NavbarDivider = ({ className, ...props }) => {
+const NavbarDivider = ({ className, renderAs = 'hr', ...props }) => {
   return (
-    <Element {...props} className={classnames('navbar-divider', className)} />
+    <Element {...props} renderAs={renderAs} className={classnames('navbar-divider', className)} />
   );
-};
-
-NavbarDivider.propTypes = {
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-NavbarDivider.defaultProps = {
-  renderAs: 'hr',
 };
 
 export default NavbarDivider;

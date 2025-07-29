@@ -20,6 +20,7 @@ const Navbar = ({
   color,
   active,
   size,
+  renderAs = 'nav',
   ...props
 }) => {
   useEffect(() => {
@@ -41,6 +42,7 @@ const Navbar = ({
     <ShowContext.Provider value={active}>
       <Element
         {...props}
+        renderAs='nav'
         role="navigation"
         className={classnames('navbar', className, {
           'is-transparent': transparent,
@@ -53,35 +55,6 @@ const Navbar = ({
       </Element>
     </ShowContext.Provider>
   );
-};
-
-Navbar.propTypes = {
-  transparent: PropTypes.bool,
-  fixed: PropTypes.oneOf(['top', 'bottom']),
-  color: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  size: PropTypes.oneOfType([PropTypes.oneOf(['large']), PropTypes.string]),
-  active: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Navbar.defaultProps = {
-  renderAs: 'nav',
 };
 
 Navbar.Brand = Brand;

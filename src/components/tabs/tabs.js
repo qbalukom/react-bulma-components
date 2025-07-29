@@ -34,15 +34,4 @@ const Tabs = ({
 
 Tabs.Tab = Tab;
 
-Tabs.propTypes = {
-  align: PropTypes.oneOf(['center', 'right']),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  /** This is called style on Bulma documentation */
-  type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
-  fullwidth: PropTypes.bool,
-};
-
 export default Tabs;

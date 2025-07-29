@@ -4,28 +4,16 @@ import classnames from 'classnames';
 
 import Element from '../../../../element';
 
-const PanelTabsTab = ({ className, active, ...props }) => {
+const PanelTabsTab = ({ className, active, renderAs = 'a', ...props }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames(className, {
         'is-active': active,
       })}
     />
   );
-};
-
-PanelTabsTab.propTypes = {
-  active: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-PanelTabsTab.defaultProps = {
-  renderAs: 'a',
 };
 
 export default PanelTabsTab;

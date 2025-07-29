@@ -12,11 +12,13 @@ const Heading = ({
   weight,
   spaced,
   heading,
+  renderAs = 'h1',
   ...props
 }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames(className, {
         title: !subtitle && !heading,
         subtitle,
@@ -29,27 +31,6 @@ const Heading = ({
       {children}
     </Element>
   );
-};
-
-Heading.propTypes = {
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
-  subtitle: PropTypes.bool,
-  heading: PropTypes.bool,
-  spaced: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Heading.defaultProps = {
-  renderAs: 'h1',
 };
 
 export default Heading;

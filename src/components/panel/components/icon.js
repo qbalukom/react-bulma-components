@@ -4,20 +4,8 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const PanelIcon = ({ className, ...props }) => {
-  return <Element {...props} className={classnames('panel-icon', className)} />;
-};
-
-PanelIcon.propTypes = {
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-PanelIcon.defaultProps = {
-  renderAs: 'span',
+const PanelIcon = ({ className, renderAs = 'span', ...props }) => {
+  return <Element {...props} renderAs={renderAs} className={classnames('panel-icon', className)} />;
 };
 
 export default PanelIcon;

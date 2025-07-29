@@ -22,15 +22,12 @@ const NavbarBurger = ({ style, className, ...props }) => {
             <span />
             <span />
             <span />
+            <span />
           </Element>
         );
       }}
     </ShowContext.Consumer>
   );
 };
-
-NavbarBurger.propTypes = {};
-
-NavbarBurger.defaultProps = {};
 
 export default NavbarBurger;

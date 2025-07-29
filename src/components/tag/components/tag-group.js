@@ -4,10 +4,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => {
+const TagGroup = ({ children, className, gapless, hasAddons, renderAs = 'span', ...props }) => {
   return (
     <Element
       {...props}
+      renderAs={renderAs}
       className={classnames('tags', className, {
         'has-addons': gapless || hasAddons,
       })}
@@ -15,23 +16,6 @@ const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => {
       {children}
     </Element>
   );
-};
-
-TagGroup.propTypes = {
-  hasAddons: PropTypes.bool,
-  /**
-   * deprecated: use hasAddons
-   */
-  gapless: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-TagGroup.defaultProps = {
-  renderAs: 'span',
 };
 
 export default TagGroup;

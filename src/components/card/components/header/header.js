@@ -12,11 +12,6 @@ const CardHeader = ({ className, ...props }) => {
 };
 
 CardHeader.Title = CardHeaderTitle;
-
 CardHeader.Icon = CardHeaderIcon;
-
-CardHeader.propTypes = {};
-
-CardHeader.defaultProps = {};
 
 export default CardHeader;

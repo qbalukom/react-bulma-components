@@ -9,8 +9,4 @@ const TableContainer = ({ className, ...props }) => {
   );
 };
 
-TableContainer.propTypes = {};
-
-TableContainer.defaultProps = {};
-
 export default TableContainer;

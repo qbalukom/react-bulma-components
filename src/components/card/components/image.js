@@ -12,8 +12,4 @@ const CardImage = ({ className, domRef, ...props }) => {
   );
 };
 
-CardImage.propTypes = {};
-
-CardImage.defaultProps = {};
-
 export default CardImage;

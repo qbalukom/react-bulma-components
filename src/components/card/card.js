@@ -17,15 +17,8 @@ const Card = ({ className, children, ...props }) => {
 };
 
 Card.Image = CardImage;
-
 Card.Content = CardContent;
-
 Card.Header = CardHeader;
-
 Card.Footer = CardFooter;
-
-Card.propTypes = {};
-
-Card.defaultProps = {};
 
 export default Card;

@@ -4,9 +4,10 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
-const Section = ({ children, className, size, ...props }) => {
+const Section = ({ children, className, size, renderAs = 'section', ...props }) => {
   return (
     <Element
+      renderAs={renderAs}
       {...props}
       className={classnames('section', className, {
         [`is-${size}`]: size,
@@ -15,22 +16,6 @@ const Section = ({ children, className, size, ...props }) => {
       {children}
     </Element>
   );
-};
-
-Section.propTypes = {
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
-    PropTypes.string,
-  ]),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-Section.defaultProps = {
-  renderAs: 'section',
 };
 
 export default Section;

@@ -18,11 +18,11 @@ const Dropdown = ({
   hoverable,
   label,
   onChange,
-  closeOnSelect,
+  closeOnSelect = true,
   icon,
   domRef,
   disabled,
-  menuId,
+  menuId = 'dropdown-menu',
   ...props
 }) => {
   const ref = useRef(domRef);
@@ -122,73 +122,5 @@ const Dropdown = ({
 Dropdown.Item = DropdownItem;
 
 Dropdown.Divider = DropdownDivider;
-
-Dropdown.propTypes = {
-  /**
-   * The value of the currently selected dropdown item. If this value match
-   * with the value passed to a Dropdown.item it will be used as label if the label prop its empty
-   */
-  value: PropTypes.any,
-  /**
-   * Called when a dropdown item is selected.
-   */
-  onChange: PropTypes.func,
-  /**
-   * The color of the dropdown button.
-   */
-  color: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  disabled: PropTypes.bool,
-  /**
-   * Whether the dropdown should align to the right side.
-   */
-  right: PropTypes.bool,
-  /**
-   * Whether the dropdown menu should appear above the dropdown button
-   * instead of below.
-   */
-  up: PropTypes.bool,
-  /**
-   * Whether the dropdown menu can be activated when the cursor
-   * hovers above the button without clicking.
-   */
-  hoverable: PropTypes.bool,
-  /**
-   * A string, or a react component that displays the label of the dropdown
-   * button. if not set it will be use the selected Dropdown.Item or the first one
-   * if there is no selected
-   */
-  label: PropTypes.node,
-  /**
-   * Whether the dropdown menu should be closed when a dropdown item is selected.
-   */
-  closeOnSelect: PropTypes.bool,
-  /**
-   * A react component that draws the icon of the dropdown button.
-   * Usually it is an arrow (or a chevron) pointing downwards (or upwards).
-   */
-  icon: PropTypes.node,
-  /**
-   * Specify the id of the menu component.
-   * Default is "dropdown-menu".
-   */
-  menuId: PropTypes.string,
-};
-
-Dropdown.defaultProps = {
-  closeOnSelect: true,
-  menuId: 'dropdown-menu',
-};
 
 export default Dropdown;

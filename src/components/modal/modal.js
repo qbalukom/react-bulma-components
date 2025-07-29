@@ -19,9 +19,9 @@ const Modal = ({
   className,
   show,
   closeOnBlur,
-  showClose,
+  showClose = true,
   onClose,
-  closeOnEsc,
+  closeOnEsc = true,
   ...props
 }) => {
   const ref = useRef(domRef);
@@ -86,22 +86,5 @@ const Modal = ({
 
 Modal.Content = ModalContent;
 Modal.Card = ModalCard;
-
-Modal.propTypes = {
-  show: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  closeOnEsc: PropTypes.bool,
-  closeOnBlur: PropTypes.bool,
-  showClose: PropTypes.bool,
-  document: PropTypes.object,
-  className: PropTypes.string,
-};
-
-Modal.defaultProps = {
-  closeOnEsc: true,
-  showClose: true,
-  // Expose mount point for testing
-  document: undefined,
-};
 
 export default Modal;

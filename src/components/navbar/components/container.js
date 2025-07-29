@@ -9,7 +9,7 @@ const alignMapper = {
   right: 'end',
 };
 
-const NavbarContainer = ({ className, children, align, ...props }) => {
+const NavbarContainer = ({ className, children, align = 'left', ...props }) => {
   return (
     <Element
       {...props}
@@ -23,14 +23,6 @@ const NavbarContainer = ({ className, children, align, ...props }) => {
       {children}
     </Element>
   );
-};
-
-NavbarContainer.propTypes = {
-  align: PropTypes.oneOf(['left', 'right']),
-};
-
-NavbarContainer.defaultProps = {
-  align: 'left',
 };
 
 export default NavbarContainer;

@@ -15,8 +15,4 @@ const PanelBlock = ({ className, active, ...props }) => {
   );
 };
 
-PanelBlock.propTypes = {
-  active: PropTypes.bool,
-};
-
 export default PanelBlock;

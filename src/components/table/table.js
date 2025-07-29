@@ -30,15 +30,6 @@ const Table = ({
   );
 };
 
-Table.propTypes = {
-  size: PropTypes.oneOf(['fullwidth', 'narrow']),
-  striped: PropTypes.bool,
-  bordered: PropTypes.bool,
-  hoverable: PropTypes.bool,
-};
-
-Table.defaultProps = {};
-
 Table.Container = Container;
 
 export default Table;

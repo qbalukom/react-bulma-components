@@ -4,20 +4,8 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const HeroHeader = ({ className, ...props }) => {
-  return <Element {...props} className={classnames(className, 'hero-head')} />;
-};
-
-HeroHeader.propTypes = {
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-HeroHeader.defaultProps = {
-  renderAs: 'header',
+const HeroHeader = ({ className, renderAs = 'header', ...props }) => {
+  return <Element {...props} renderAs={renderAs} className={classnames(className, 'hero-head')} />;
 };
 
 export default HeroHeader;

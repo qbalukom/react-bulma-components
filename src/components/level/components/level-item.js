@@ -11,6 +11,4 @@ const LevelItem = ({ children, className, ...props }) => {
   );
 };
 
-LevelItem.propTypes = {};
-
 export default LevelItem;

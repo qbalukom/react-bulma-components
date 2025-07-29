@@ -11,6 +11,4 @@ const Loader = ({ children, className, ...props }) => {
   );
 };
 
-Loader.propTypes = {};
-
 export default Loader;

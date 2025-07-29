@@ -6,31 +6,15 @@ import MenuListItem from './components/item';
 
 import Element from '../../../element';
 
-const MenuList = ({ className, title, ...props }) => {
+const MenuList = ({ className, title, renderAs = 'ul', ...props }) => {
   return (
     <>
       {title && <p className="menu-label">{title}</p>}
-      <Element className={classnames('menu-list', className)} {...props} />
+      <Element {...props} renderAs={renderAs} className={classnames('menu-list', className)} />
     </>
   );
 };
 
 MenuList.Item = MenuListItem;
-
-MenuList.propTypes = {
-  /**
-   * The title of this list in the menu.
-   */
-  title: PropTypes.node,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-    PropTypes.object,
-  ]),
-};
-
-MenuList.defaultProps = {
-  renderAs: 'ul',
-};
 
 export default MenuList;

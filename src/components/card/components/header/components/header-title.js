@@ -12,8 +12,4 @@ const CardHeaderTitle = ({ className, ...props }) => {
   );
 };
 
-CardHeaderTitle.propTypes = {};
-
-CardHeaderTitle.defaultProps = {};
-
 export default CardHeaderTitle;

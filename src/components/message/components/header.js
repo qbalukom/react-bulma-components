@@ -11,6 +11,4 @@ const MessageHeader = ({ children, className, ...props }) => {
   );
 };
 
-MessageHeader.propTypes = {};
-
 export default MessageHeader;
